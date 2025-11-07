@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "6789:80"
+    container_name: api
+    volumes:
+      - kargo-data:/app/data
+    networks:
+      - kargo-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "6786:80"
+    container_name: frontend
+    depends_on:
+      - api
+    networks:
+      - kargo-network
+
+networks:
+  kargo-network:
+    driver: bridge
+
+volumes:
+  kargo-data:

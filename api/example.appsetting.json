@@ -1,0 +1,13 @@
+{
+	"Logging": {
+		"LogLevel": {
+	"Default": "Information",
+	"Microsoft.AspNetCore": "Warning"
+		}
+	},
+	"AllowedHosts": "*",
+	"FourMe": {
+		"Email": "123@gratis.com.tr",
+		"Password": "123-*"
+	}
+}
